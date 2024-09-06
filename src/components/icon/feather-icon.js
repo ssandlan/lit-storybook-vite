@@ -11,8 +11,8 @@ export class FeatherIcon extends LitElement {
   constructor() {
     super();
     this.icon = "";
-    this.width = "16";
-    this.height = "16";
+    this.width = "18";
+    this.height = "18";
   }
 
   render() {
