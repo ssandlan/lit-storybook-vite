@@ -18,8 +18,11 @@ export class FeatherIcon extends LitElement {
   render() {
     console.log(this.size);
     if (this.size === "small") {
-      this.width = "16";
-      this.height = "16";
+      this.width = "12";
+      this.height = "12";
+    } else if (this.size === "medium") {
+      this.width = "18";
+      this.height = "18";
     } else if (this.size === "large") {
       this.width = "24";
       this.height = "24";
