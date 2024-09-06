@@ -1,5 +1,6 @@
 import { css } from "lit-element";
-export const litButtonStyles = css`
+
+export const npgButtonStyles = css`
   button {
     display: flex;
     align-items: center;
@@ -13,30 +14,33 @@ export const litButtonStyles = css`
     line-height: 1;
     font-size: 14px;
     padding: 11px 20px;
-    background-color: var(
-      --my-sys-primary-container-color,
-      var(--lit-button-primary-container-color, #1ea7fd)
+    background-color: #1ea7fd;
     );
   }
   :host,
   button {
-    color: var(
-      --my-sys-on-primary-container-color,
-      var(--lit-button-on-primary-container-color, white)
+    color: white;
     );
   }
+
   :host([variant="secondary"]) button {
-    background-color: var(
-      --my-sys-secondary-container-color,
-      var(--lit-button-secondary-container-color, transparent)
+    background-color: transparent;
     );
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   }
   :host([variant="secondary"]),
   :host([variant="secondary"]) button {
-    color: var(
-      --my-sys-on-secondary-container-color,
-      var(--lit-button-on-secondary-container-color, #333)
+    color: #333;
+    );
+  }
+
+  :host([variant="tertiary"]) button {
+    background-color: #ccffff;
+    );
+    }
+    :host([variant="tertiary"]),
+    :host([variant="tertiary"]) button {
+    color: #002255;
     );
   }
   .small {

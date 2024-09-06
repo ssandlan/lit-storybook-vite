@@ -1,38 +1,29 @@
 import { html, svg } from "lit";
-import { styleMap } from "lit/directives/style-map.js";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
-import "../components/lit-button/lit-button.js";
-import feather from "feather-icons";
+import "../components/npg-button/npg-button.js";
+import "../components/icon/feather-icon.js";
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary,
-  primaryContainerColor = null,
-  colorOnPrimaryContainer = null,
-  secondaryContainerColor = null,
-  colorOnSecondaryContainer = null,
+  variant,
   size,
   label,
-  position,
+  iconPosition,
   iconName,
+  link,
   onClick,
 }) => {
-  let iconString = "";
-  if (iconName) {
-    iconString = feather.icons[`${iconName}`].toSvg();
-  }
-
   return html`
-    <lit-button
-      .variant=${primary ? "primary" : "secondary"}
-      .size=${size}
+    <npg-button
+      variant=${variant}
+      size=${size}
+      position=${iconPosition}
+      icon=${iconName}
+      link=${link}
       @click=${onClick}
     >
-      <feather-icon icon="phone" size="small"></feather-icon>
       ${label}
-      ${position === "icon-right" && iconName ? unsafeHTML(iconString) : ""}
-    </lit-button>
+    </npg-button>
   `;
 };

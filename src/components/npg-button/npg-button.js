@@ -1,10 +1,10 @@
 import { LitElement, css, html } from "lit";
 
 import { classMap } from "lit/directives/class-map.js";
-import { litButtonStyles } from "./lit-button-style";
+import { npgButtonStyles } from "./npg-button-style";
 
-export class LitButton extends LitElement {
-  static styles = [litButtonStyles];
+export class NpgButton extends LitElement {
+  static styles = [npgButtonStyles];
   static properties = {
     variant: { type: String, reflect: true },
     size: { type: String },
@@ -17,7 +17,7 @@ export class LitButton extends LitElement {
   constructor() {
     super();
     this.variant = "primary";
-    this.variant = "medium";
+    this.size = "medium";
     this.position = "none";
     this.icon = "";
   }
@@ -25,6 +25,7 @@ export class LitButton extends LitElement {
   handleClick() {
     // Only _blank for now
     if (this.link) {
+      console.log(this.link);
       window.open(this.link);
     }
   }
@@ -35,6 +36,7 @@ export class LitButton extends LitElement {
         type="button"
         class=${classMap({
           small: this.size === "small",
+          medium: this.size === "medium",
           large: this.size === "large",
         })}
         @click=${this.handleClick}
@@ -54,4 +56,4 @@ export class LitButton extends LitElement {
   }
 }
 
-customElements.define("lit-button", LitButton);
+customElements.define("npg-button", NpgButton);
