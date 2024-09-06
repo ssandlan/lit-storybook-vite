@@ -5,13 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
-    <script
-      type="module"
-      src="/src/components/lit-button/lit-button.js"
-    ></script>
-    <script type="module" src="/src/components/icon/feather-icon.js"></script>
+    <script type="module" src="/src/components/index.js"></script>
   </head>
   <body>
     <div
@@ -22,19 +16,30 @@
         gap: 20px;
       "
     >
-      <lit-button link="https://www.google.com">Click me</lit-button>
+      <h1>Button Component</h1>
+      <npg-button link="https://www.google.com">Click me</npg-button>
 
-      <lit-button variant="primary" size="small">
+      <npg-button variant="primary" size="small">
         a small primary button
-      </lit-button>
+      </npg-button>
 
-      <lit-button variant="secondary" size="small">
+      <npg-button variant="secondary" size="small">
         a small secondary button
-      </lit-button>
+      </npg-button>
 
-      <lit-button variant="primary" size="small" icon="phone" position="left">
+      <npg-button variant="primary" size="small" icon="phone" position="left">
         a small primary button and icon
-      </lit-button>
+      </npg-button>
+
+      <npg-button
+        variant="primary"
+        size="large"
+        position="right"
+        icon="alert-circle"
+        link="google.com"
+      >
+        Click here
+      </npg-button>
     </div>
   </body>
 </html>

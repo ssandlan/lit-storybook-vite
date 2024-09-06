@@ -25,7 +25,6 @@ export class NpgButton extends LitElement {
   handleClick() {
     // Only _blank for now
     if (this.link) {
-      console.log(this.link);
       window.open(this.link);
     }
   }
