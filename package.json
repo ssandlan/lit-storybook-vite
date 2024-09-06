@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@takuma-ru/auto-story-generator": "^0.3.3",
+    "feather-icons": "^4.29.2",
     "lit": "^3.2.0"
   },
   "devDependencies": {

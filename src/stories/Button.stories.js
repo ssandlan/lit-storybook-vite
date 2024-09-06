@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import feather from "feather-icons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/web-components/writing-stories/introduction
 export default {
@@ -6,14 +7,18 @@ export default {
   tags: ["autodocs"],
   render: (args) => Button(args),
   argTypes: {
-    primaryContainerColor: { control: "color" },
-    colorOnPrimaryContainer: { control: "color" },
-    secondaryContainerColor: { control: "color" },
-    colorOnSecondaryContainer: { control: "color" },
     onClick: { action: "onClick" },
     size: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
+    },
+    iconPosition: {
+      control: { type: "select" },
+      options: ["none", "icon-left", "icon-right"],
+    },
+    iconName: {
+      control: { type: "select" },
+      options: Object.keys(feather.icons),
     },
   },
 };
@@ -43,5 +48,14 @@ export const Small = {
   args: {
     size: "small",
     label: "Button",
+  },
+};
+
+export const IconLeft = {
+  args: {
+    primary: true,
+    label: "Button",
+    iconPosition: "icon-left",
+    iconName: "phone",
   },
 };
